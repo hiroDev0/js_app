@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>簡単な書籍管理アプリ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <h1>書籍管理アプリ</h1>
+    
+    <!-- ログインセクション -->
+    <div id="auth-section">
+      <input type="email" id="email" placeholder="メールアドレス">
+      <input type="password" id="password" placeholder="パスワード">
+      <button onclick="login()">ログイン</button>
+      <p id="login-error" style="color: red;"></p>
+    </div>
+
+    <!-- 書籍の一覧セクション -->
+    <div id="book-section" style="display: none;">
+      <h2>書籍一覧</h2>
+      <ul id="bookList"></ul>
+      <button onclick="showAddBookForm()">登録</button>
+      <button onclick="logout()">ログアウト</button>
+    </div>
+
+    <!-- 書籍の登録フォーム -->
+    <div id="add-book-section" style="display: none;">
+      <h2>新しい書籍を登録</h2>
+      <input type="text" id="new-title" placeholder="タイトル">
+      <input type="text" id="new-author" placeholder="著者">
+      <button onclick="addBook()">登録</button>
+      <button onclick="cancelAddBook()">キャンセル</button>
+    </div>
+
+    <!-- 書籍の編集フォーム -->
+    <div id="edit-book-section" style="display: none;">
+      <h2>書籍を編集</h2>
+      <input type="text" id="edit-title" placeholder="タイトル">
+      <input type="text" id="edit-author" placeholder="著者">
+      <button onclick="updateBook()">更新</button>
+      <button onclick="cancelEditBook()">キャンセル</button>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
